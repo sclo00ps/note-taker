@@ -2,8 +2,8 @@
 // We are linking our routes to a series of "data" sources.
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 
-const savedNotesData = require('../data/savedNotesData');
-const newNoteData = require('../data/newNoteData');
+const savedNotesData = require('../db/data/savedNotesData');
+const newNoteData = require('../db/data/newNoteData');
 
 // ROUTING
 
@@ -14,6 +14,7 @@ module.exports = (app) => {
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
 
+  
   app.get('/api', (req, res) => res.json(savedNotesData));
 
   app.get('/api/notes', (req, res) => res.json(newNoteData));
